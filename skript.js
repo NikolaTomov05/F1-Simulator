@@ -1,14 +1,14 @@
 let vozaci = [
-    {ime:"Max Verstappen", tim:"Red Bull", brzina:97, veshtina:99, gumi:"meki", pitstop:false, status:"Старт"},
-    {ime:"Lewis Hamilton", tim:"Mercedes", brzina:95, veshtina:97, gumi:"tvrdi", pitstop:false, status:"Старт"},
-    {ime:"Charles Leclerc", tim:"Ferrari", brzina:96, veshtina:95, gumi:"meki", pitstop:false, status:"Старт"},
-    {ime:"Lando Norris", tim:"McLaren", brzina:96, veshtina:96, gumi:"tvrdi", pitstop:false, status:"Старт"},
-    {ime:"Fernando Alonso", tim:"Aston Martin", brzina:93, veshtina:98, gumi:"tvrdi", pitstop:false, status:"Старт"},
-    {ime:"Carlos Sainz", tim:"Williams", brzina:94, veshtina:94, gumi:"meki", pitstop:false, status:"Старт"},
-    {ime:"Pierre Gasly", tim:"Alpine", brzina:91, veshtina:90, gumi:"meki", pitstop:false, status:"Старт"},
-    {ime:"Alexander Albon", tim:"Williams", brzina:92, veshtina:93, gumi:"meki", pitstop:false, status:"Старт"},
-    {ime:"Isack Hadjar", tim:"RB", brzina:89, veshtina:88, gumi:"tvrdi", pitstop:false, status:"Старт"},
-    {ime:"Oscar Piastri", tim:"McLaren", brzina:95, veshtina:93, gumi:"meki", pitstop:false, status:"Старт"}
+    {ime:"Max Verstappen", tim:"Red Bull", brzina:97, veshtina:99, gumi:"меки", pitstop:false, status:"Старт"},
+    {ime:"Lewis Hamilton", tim:"Mercedes", brzina:95, veshtina:97, gumi:"тврди", pitstop:false, status:"Старт"},
+    {ime:"Charles Leclerc", tim:"Ferrari", brzina:96, veshtina:95, gumi:"меки", pitstop:false, status:"Старт"},
+    {ime:"Lando Norris", tim:"McLaren", brzina:96, veshtina:96, gumi:"тврди", pitstop:false, status:"Старт"},
+    {ime:"Fernando Alonso", tim:"Aston Martin", brzina:93, veshtina:98, gumi:"тврди", pitstop:false, status:"Старт"},
+    {ime:"Carlos Sainz", tim:"Williams", brzina:94, veshtina:94, gumi:"меки", pitstop:false, status:"Старт"},
+    {ime:"Pierre Gasly", tim:"Alpine", brzina:91, veshtina:90, gumi:"меки", pitstop:false, status:"Старт"},
+    {ime:"Alexander Albon", tim:"Williams", brzina:92, veshtina:93, gumi:"меки", pitstop:false, status:"Старт"},
+    {ime:"Isack Hadjar", tim:"RB", brzina:89, veshtina:88, gumi:"тврди", pitstop:false, status:"Старт"},
+    {ime:"Oscar Piastri", tim:"McLaren", brzina:95, veshtina:93, gumi:"меки", pitstop:false, status:"Старт"}
 ];
 
 function start()
@@ -32,8 +32,8 @@ let krug = 0;
 function PrintVozaci(niza, printt)
 {
     let sodrzina = "<h2>Круг: " + krug + " / 10</h2><table>" +
-        "<thead><th>#</th><th>Vozac</th><th>Tim</th><th>Brzina</th>" +
-        "<th>Veshtina</th><th>Gumi</th><th>Vreme (krug)</th><th>Vkupno</th><th>Status</th></thead><tbody>";
+        "<thead><th>#</th><th>Возач</th><th>Тим</th><th>Брзина</th>" +
+        "<th>Вештина</th><th>Гуми</th><th>Време (круг)</th><th>Вкупно</th><th>Статус</th></thead><tbody>";
 
     let dolzina = niza.length;
 
@@ -70,7 +70,7 @@ function SledenKrug()
 
         let krugvreme = 90 - v.brzina / 10 + Math.random() * 2 + Math.random() * (100 - v.veshtina) / 5;
 
-        if (v.gumi === "meki") {
+        if (v.gumi === "меки") {
             krugvreme -= 1.;
         }
 
@@ -82,11 +82,11 @@ function SledenKrug()
         if (!v.pitstop && (krug >= 5 || Math.random() < 0.35)) {
             v.pitstop = true;
             krugvreme += 15.; 
-            if (v.gumi === "meki") {
-                v.gumi = "tvrdi";
+            if (v.gumi === "меки") {
+                v.gumi = "тврди";
             } 
             else{
-                v.gumi = "meki";
+                v.gumi = "меки";
             }
             krugstatus = "Влезе во пит-стоп(Смени гуми)";
         } 
@@ -117,10 +117,10 @@ function NovaTrka()
         vozaci[i].pitstop = false;
         if (i % 2 === 0)
         {
-            vozaci[i].gumi = "meki";
+            vozaci[i].gumi = "меки";
         } 
         else{
-            vozaci[i].gumi = "tvrdi";
+            vozaci[i].gumi = "тврди";
         }
         vozaci[i].status = "Старт";
     }
